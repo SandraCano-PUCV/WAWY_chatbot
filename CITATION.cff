@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+
+title: "WAWY: A Chatbot for Academic Stress Support"
+
+type: software
+
+authors:
+  - family-names: "Cano"
+    given-names: "Sandra"
+
+version: 1.0.0
+
+date-released: 2026-08-30
+
+repository-code: "https://github.com/SandraCano-PUCV/WAWY_chatbot"
+
+license: MIT
