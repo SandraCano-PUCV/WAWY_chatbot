@@ -1,0 +1,137 @@
+services:
+
+  mysql:
+    image: mysql:8.4
+
+    container_name: wawy-mysql
+
+    restart: unless-stopped
+
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: chatbot
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+
+    ports:
+      - "3306:3306"
+
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+    networks:
+      - wawy-network
+
+
+  rasa-actions:
+    build:
+      context: ./rasa
+
+    container_name: wawy-actions
+
+    command:
+      - rasa
+      - run
+      - actions
+      - --port
+      - "5055"
+
+    environment:
+      WAWY_DB_HOST: mysql
+      WAWY_DB_PORT: 3306
+      WAWY_DB_USER: ${MYSQL_USER}
+      WAWY_DB_PASSWORD: ${MYSQL_PASSWORD}
+      WAWY_DB_NAME: chatbot
+
+    depends_on:
+      - mysql
+
+    ports:
+      - "5055:5055"
+
+    networks:
+      - wawy-network
+
+
+  rasa:
+    build:
+      context: ./rasa
+
+    container_name: wawy-rasa
+
+    command:
+      - rasa
+      - run
+      - --enable-api
+      - --credentials
+      - credentials.yml
+      - --endpoints
+      - endpoints.docker.yml
+      - --port
+      - "5005"
+
+    depends_on:
+      - rasa-actions
+
+    ports:
+      - "5005:5005"
+
+    networks:
+      - wawy-network
+
+
+  backend:
+    build:
+      context: ./server
+
+    container_name: wawy-backend
+
+    environment:
+      PORT: 3001
+
+      DB_HOST: mysql
+      DB_PORT: 3306
+      DB_USER: ${MYSQL_USER}
+      DB_PASSWORD: ${MYSQL_PASSWORD}
+      DB_DATABASE: chatbot
+
+      SESSION_SECRET: ${SESSION_SECRET}
+
+      RASA_URL: http://rasa:5005
+
+      FRONTEND_URL: http://localhost:3000
+
+    depends_on:
+      - mysql
+      - rasa
+
+    ports:
+      - "3001:3001"
+
+    networks:
+      - wawy-network
+
+
+  frontend:
+    build:
+      context: ./client
+
+    container_name: wawy-frontend
+
+    depends_on:
+      - backend
+
+    ports:
+      - "3000:80"
+
+    networks:
+      - wawy-network
+
+
+volumes:
+  mysql_data:
+
+
+networks:
+  wawy-network:
+    driver: bridge
