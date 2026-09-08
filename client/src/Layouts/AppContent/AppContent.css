@@ -1,0 +1,11 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+.app-container{
+    display: flex;
+    flex-direction: row;
+    padding: 30px;
+    width: 100% !important;
+    overflow-x: hidden !important;
+}

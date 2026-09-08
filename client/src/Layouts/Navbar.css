@@ -1,0 +1,10 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+.navbar-color{
+    width: 100vw !important;
+    background-color: #012E40 !important;
+
+}

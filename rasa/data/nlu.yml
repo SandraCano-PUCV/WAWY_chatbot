@@ -1,0 +1,81 @@
+version: "3.1"
+
+nlu:
+
+  - intent: saludo
+    examples: |
+      - hola
+      - hey
+      - buenos días
+      - buen día
+      - buenas tardes
+      - buenas noches
+      - hola wawy
+      - hola, ¿cómo estás?
+      - buenas
+      - qué tal
+
+  - intent: despedida
+    examples: |
+      - adiós
+      - bye
+      - nos vemos
+      - hasta luego
+      - hasta pronto
+      - hablamos después
+      - me voy
+      - chao
+      - chau
+      - hasta mañana
+
+  - intent: positivo
+    examples: |
+      - bien
+      - muy bien
+      - estoy bien
+      - me siento bien
+      - feliz
+      - estoy feliz
+      - bastante bien
+      - mejor
+      - me siento mejor
+      - todo bien
+
+  - intent: negativo
+    examples: |
+      - no muy bien
+      - no estoy bien
+      - me siento mal
+      - mal
+      - estoy mal
+      - triste
+      - me siento triste
+      - no me siento bien
+      - hoy no estoy bien
+      - no
+
+  - intent: agradecer
+    examples: |
+      - gracias
+      - muchas gracias
+      - gracias wawy
+      - vale wawy
+      - te agradezco
+      - gracias por escucharme
+      - gracias por ayudarme
+      - muchas gracias por tu ayuda
+      - igualmente
+      - gracias por estar aquí
+
+  - intent: afirmativo
+    examples: |
+      - sí
+      - si
+      - ok
+      - está bien
+      - de acuerdo
+      - claro
+      - correcto
+      - perfecto
+      - bueno
+      - vale

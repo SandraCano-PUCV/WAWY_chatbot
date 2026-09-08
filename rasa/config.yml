@@ -1,0 +1,27 @@
+recipe: default.v1
+
+assistant_id: wawy
+
+language: es
+
+pipeline:
+  - name: WhitespaceTokenizer
+  - name: RegexFeaturizer
+  - name: LexicalSyntacticFeaturizer
+  - name: CountVectorsFeaturizer
+  - name: CountVectorsFeaturizer
+    analyzer: char_wb
+    min_ngram: 1
+    max_ngram: 4
+
+  - name: DIETClassifier
+    epochs: 100
+    constrain_similarities: true
+
+policies:
+  - name: MemoizationPolicy
+  - name: RulePolicy
+  - name: TEDPolicy
+    max_history: 10
+    epochs: 50
+    constrain_similarities: true

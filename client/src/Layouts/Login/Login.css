@@ -1,0 +1,330 @@
+/* =========================
+   LOGIN - MOBILE FIRST
+   ========================= */
+
+.login-page {
+  width: 100%;
+  min-height: calc(100vh - 56px);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 20px 16px;
+
+  background-color: #f4f6f8;
+  box-sizing: border-box;
+}
+
+
+/* =========================
+   TARJETA
+   ========================= */
+
+.login-card {
+  width: 100%;
+  max-width: 420px;
+
+  background-color: #ffffff;
+
+  padding: 24px 18px;
+
+  border-radius: 12px;
+
+  box-shadow:
+    0 4px 18px
+    rgba(0, 0, 0, 0.1);
+
+  box-sizing: border-box;
+}
+
+
+/* =========================
+   TÍTULOS
+   ========================= */
+
+.login-title {
+  margin: 0 0 8px 0;
+
+  text-align: center;
+
+  font-size: 1.6rem;
+  font-weight: 700;
+
+  color: #212529;
+}
+
+
+.login-subtitle {
+  margin-bottom: 24px;
+
+  text-align: center;
+
+  font-size: 0.95rem;
+
+  color: #6c757d;
+}
+
+
+/* =========================
+   FORMULARIO
+   ========================= */
+
+.login-form-group {
+  width: 100%;
+
+  margin-bottom: 18px;
+}
+
+
+.login-form-group label {
+  display: block;
+
+  margin-bottom: 6px;
+
+  font-size: 0.95rem;
+  font-weight: 600;
+
+  color: #343a40;
+}
+
+
+.login-form-group input {
+  width: 100%;
+
+  min-height: 44px;
+
+  padding: 10px 12px;
+
+  border: 1px solid #ced4da;
+  border-radius: 8px;
+
+  font-size: 1rem;
+
+  box-sizing: border-box;
+
+  outline: none;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+
+.login-form-group input:focus {
+  border-color: #495057;
+
+  box-shadow:
+    0 0 0 3px
+    rgba(73, 80, 87, 0.12);
+}
+
+
+/* =========================
+   BOTÓN
+   ========================= */
+
+.login-button {
+  width: 100%;
+
+  min-height: 46px;
+
+  margin-top: 4px;
+
+  padding: 10px 16px;
+
+  border: none;
+  border-radius: 8px;
+
+  background-color: #212529;
+
+  color: #ffffff;
+
+  font-size: 1rem;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.2s ease,
+    transform 0.1s ease;
+}
+
+
+.login-button:hover {
+  background-color: #343a40;
+}
+
+
+.login-button:active {
+  transform: scale(0.99);
+}
+
+
+.login-button:disabled {
+  opacity: 0.6;
+
+  cursor: not-allowed;
+}
+
+
+/* =========================
+   MENSAJES
+   ========================= */
+
+.login-message {
+  width: 100%;
+
+  margin-bottom: 16px;
+
+  padding: 10px 12px;
+
+  border-radius: 8px;
+
+  background-color: #f8d7da;
+
+  color: #842029;
+
+  font-size: 0.9rem;
+
+  text-align: center;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================
+   PIE DEL LOGIN
+   ========================= */
+
+.login-footer {
+  margin-top: 22px;
+
+  text-align: center;
+
+  font-size: 0.9rem;
+
+  color: #6c757d;
+}
+
+
+.login-footer a {
+  color: #212529;
+
+  font-weight: 600;
+
+  text-decoration: none;
+}
+
+
+.login-footer a:hover {
+  text-decoration: underline;
+}
+
+
+/* =========================
+   TELÉFONOS PEQUEÑOS
+   ========================= */
+
+@media (max-width: 400px) {
+
+  .login-page {
+    padding: 14px 10px;
+  }
+
+  .login-card {
+    padding: 20px 14px;
+    border-radius: 10px;
+  }
+
+  .login-title {
+    font-size: 1.4rem;
+  }
+
+  .login-subtitle {
+    font-size: 0.88rem;
+  }
+
+  .login-form-group label {
+    font-size: 0.9rem;
+  }
+
+  .login-form-group input {
+    font-size: 16px;
+  }
+
+  .login-button {
+    font-size: 0.95rem;
+  }
+
+}
+
+
+/* =========================
+   TABLET
+   ========================= */
+
+@media (min-width: 576px) {
+
+  .login-page {
+    padding: 32px 24px;
+  }
+
+  .login-card {
+    padding: 32px;
+  }
+
+  .login-title {
+    font-size: 1.8rem;
+  }
+
+}
+
+
+/* =========================
+   ESCRITORIO
+   ========================= */
+
+@media (min-width: 992px) {
+
+  .login-card {
+    max-width: 440px;
+
+    padding: 38px;
+  }
+
+  .login-title {
+    font-size: 2rem;
+  }
+
+}
+
+
+/* =========================
+   PANTALLAS MUY BAJAS
+   ========================= */
+
+@media (max-height: 600px) {
+
+  .login-page {
+    align-items: flex-start;
+
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+}
+
+
+/* =========================
+   ACCESIBILIDAD
+   ========================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .login-button,
+  .login-form-group input {
+    transition: none;
+  }
+
+}

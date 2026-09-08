@@ -1,0 +1,553 @@
+version: "3.1"
+stories:
+- story: ruta1
+  steps:
+  - intent: saludo
+  - action: action_saludo
+  - action: utter_wawy
+  - action: utter_ask_1
+  - action: nombre_form
+  - active_loop: nombre_form
+  - slot_was_set:
+    - requested_slot: nombre
+  - slot_was_set:
+    - nombre: pepe
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_presentacion_1
+  - intent: agradecer
+  - action: utter_ask_2
+  - action: edad_form
+  - active_loop: edad_form
+  - slot_was_set:
+    - requested_slot: edad
+  - slot_was_set:
+    - edad: 12
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_response_edad
+  - action: utter_ask_3
+  - action: genero_form
+  - active_loop: genero_form
+  - slot_was_set:
+    - requested_slot: genero
+  - slot_was_set:
+    - genero: Mujer
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_response_genero
+  - action: utter_ask_4
+  - action: vivir_form
+  - active_loop: vivir_form
+  - slot_was_set:
+    - requested_slot: vivir
+  - slot_was_set:
+    - vivir: si
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_ask_5
+  - action: conquien_form
+  - active_loop: conquien_form
+  - slot_was_set:
+    - requested_slot: conquien
+  - slot_was_set:
+    - conquien: padres
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_ask_6
+  - action: profesion_form
+  - active_loop: profesion_form
+  - slot_was_set:
+    - requested_slot: profesion
+  - slot_was_set:
+    - profesion: estudio
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: universidad_form
+  - active_loop: universidad_form
+  - slot_was_set:
+    - requested_slot: universidad
+  - slot_was_set:
+    - universidad: PUCV
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_ask_8
+  - action: escuela_form
+  - active_loop: escuela_form
+  - slot_was_set:
+    - requested_slot: escuela
+  - slot_was_set:
+    - escuela: informática
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_ask_9
+  - action: semestre_form
+  - active_loop: semestre_form
+  - slot_was_set:
+    - requested_slot: semestre
+  - slot_was_set:
+    - semestre: 1
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_response_9
+  - intent: afirmativo
+  - action: utter_ask_10
+  - intent: afirmativo
+  - action: utter_response_10
+  - intent: afirmativo
+  - action: utter_ask_11
+  - action: response_11_form
+  - active_loop: response_11_form
+  - slot_was_set:
+    - requested_slot: response_11
+  - slot_was_set:
+    - response_11: me siento
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_response_11
+  - checkpoint: check_response_11
+  
+- story: ruta2
+  steps: 
+  - checkpoint: check_response_11
+  - intent: negativo
+  - action: utter_ask_12
+  - checkpoint: check_response_12
+  
+- story: ruta3
+  steps:
+  - checkpoint: check_response_11
+  - intent: afirmativo
+  - action: utter_ask_121
+  - action: response_12_form
+  - active_loop: response_12_form
+  - slot_was_set:
+    - requested_slot: response_12
+  - slot_was_set:
+    - response_12: estres
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_ask_12
+  - checkpoint: check_response_12
+
+- story: ruta4
+  steps:
+  - checkpoint: check_response_12
+  - intent: negativo
+  - action: utter_response_12
+  - intent: agradecer
+  - action: utter_ask_13
+  - checkpoint: check_response_13
+
+- story: ruta 5
+  steps:
+  - checkpoint: check_response_12
+  - intent: afirmativo
+  - action: utter_ask_121
+  - action: response_121_form
+  - active_loop: response_121_form
+  - slot_was_set:
+    - requested_slot: response_121
+  - slot_was_set:
+    - response_121: estres
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_ask_13
+  - checkpoint: check_response_13
+
+- story: ruta 6
+  steps:
+  - checkpoint: check_response_13
+  - intent: afirmativo 
+  - action: utter_ask_131
+  - action: response_13_form
+  - active_loop: response_13_form
+  - slot_was_set:
+    - requested_slot: response_13
+  - slot_was_set:
+    - response_13: me siento
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_ask_14
+  - action: response_14_form
+  - active_loop: response_14_form
+  - slot_was_set:
+    - requested_slot: response_14
+  - slot_was_set:
+    - response_14: ahogo
+  - slot_was_set:
+      - requested_slot: null
+  - active_loop: null
+  - action: action_ask_15
+  - action: response_15_form
+  - active_loop: response_15_form
+  - slot_was_set:
+    - requested_slot: response_15
+  - slot_was_set:
+    - response_15: ahogo
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_ask_16
+  - action: response_16_form
+  - active_loop: response_16_form
+  - slot_was_set:
+    - requested_slot: response_16
+  - slot_was_set:
+    - response_16: estres
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_ask_17
+  - action: response_17_form
+  - active_loop: response_17_form
+  - slot_was_set:
+    - requested_slot: response_17
+  - slot_was_set:
+    - response_17: estres
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_ask_18
+  - action: response_18_form
+  - active_loop: response_18_form
+  - slot_was_set:
+    - requested_slot: response_18
+  - slot_was_set:
+    - response_18: estres
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_ask_19
+  - intent: afirmativo
+  - action: utter_ask_20
+  - action: response_20_form
+  - active_loop: response_20_form
+  - slot_was_set:
+    - requested_slot: response_20
+  - slot_was_set:
+    - response_20: estres
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_ask_21
+  - action: response_21_form
+  - active_loop: response_21_form
+  - slot_was_set:
+    - requested_slot: response_21
+  - slot_was_set:
+    - response_21: estres
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_ask_22
+  - action: response_22_form
+  - active_loop: response_22_form
+  - slot_was_set:
+    - requested_slot: response_22
+  - slot_was_set:
+    - response_22: estres
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_ask_23
+  - action: response_23_form
+  - active_loop: response_23_form
+  - slot_was_set:
+    - requested_slot: response_23
+  - slot_was_set:
+    - response_23: estres
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_ask_24
+  - action: response_24_form
+  - active_loop: response_24_form
+  - slot_was_set:
+    - requested_slot: response_24
+  - slot_was_set:
+    - response_24: estres
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_ask_25
+  - intent: afirmativo
+  - action: action_ask_26
+  - intent: afirmativo
+  - action: utter_ask_27
+  - or:
+    - intent: afirmativo
+    - intent: negativo
+  - action: action_ask_28
+  - intent: afirmativo 
+  - action: action_ask_29
+  - action: response_29_form
+  - active_loop: response_29_form
+  - slot_was_set:
+    - requested_slot: response_29
+  - slot_was_set:
+    - response_29: estres
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_ask_30
+  - action: response_30_form
+  - active_loop: response_30_form
+  - slot_was_set:
+    - requested_slot: response_30
+  - slot_was_set:
+    - response_30: estres
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_ask_31
+  - action: response_31_form
+  - active_loop: response_31_form
+  - slot_was_set:
+    - requested_slot: response_31
+  - slot_was_set:
+    - response_31: estres
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_ask_32
+  - action: utter_ask_33
+  - action: response_33_form
+  - active_loop: response_33_form
+  - slot_was_set:
+    - requested_slot: response_33
+  - slot_was_set:
+    - response_33: estres
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_ask_34
+  - action: response_34_form
+  - active_loop: response_34_form
+  - slot_was_set:
+    - requested_slot: response_34
+  - slot_was_set:
+    - response_34: estres
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_ask_35
+  - intent: afirmativo
+  - action: utter_ask_36
+  - action: response_36_form
+  - active_loop: response_36_form
+  - slot_was_set:
+    - requested_slot: response_36
+  - slot_was_set:
+    - response_36: estres
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_ask_37
+  - intent: despedida
+  - action: utter_despedida
+    
+- story: ruta 7
+  steps:
+  - checkpoint: check_response_13
+  - intent: negativo
+  - action: utter_ask_14
+  - action: response_14_form
+  - active_loop: response_14_form
+  - slot_was_set:
+    - requested_slot: response_14
+  - slot_was_set:
+    - response_14: ahogo
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_ask_15
+  - action: response_15_form
+  - active_loop: response_15_form
+  - slot_was_set:
+    - requested_slot: response_15
+  - slot_was_set:
+    - response_15: ahogo
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_ask_16
+  - action: response_16_form
+  - active_loop: response_16_form
+  - slot_was_set:
+    - requested_slot: response_16
+  - slot_was_set:
+    - response_16: estres
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_ask_17
+  - action: response_17_form
+  - active_loop: response_17_form
+  - slot_was_set:
+    - requested_slot: response_17
+  - slot_was_set:
+    - response_17: estres
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_ask_18
+  - action: response_18_form
+  - active_loop: response_18_form
+  - slot_was_set:
+    - requested_slot: response_18
+  - slot_was_set:
+    - response_18: estres
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_ask_19
+  - intent: afirmativo
+  - action: utter_ask_20
+  - action: response_20_form
+  - active_loop: response_20_form
+  - slot_was_set:
+    - requested_slot: response_20
+  - slot_was_set:
+    - response_20: estres
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_ask_21
+  - action: response_21_form
+  - active_loop: response_21_form
+  - slot_was_set:
+    - requested_slot: response_21
+  - slot_was_set:
+    - response_21: estres
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_ask_22
+  - action: response_22_form
+  - active_loop: response_22_form
+  - slot_was_set:
+    - requested_slot: response_22
+  - slot_was_set:
+    - response_22: estres
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_ask_23
+  - action: response_23_form
+  - active_loop: response_23_form
+  - slot_was_set:
+    - requested_slot: response_23
+  - slot_was_set:
+    - response_23: estres
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_ask_24
+  - action: response_24_form
+  - active_loop: response_24_form
+  - slot_was_set:
+    - requested_slot: response_24
+  - slot_was_set:
+    - response_24: estres
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_ask_25
+  - intent: afirmativo
+  - action: action_ask_26
+  - intent: afirmativo
+  - action: utter_ask_27
+  - or:
+    - intent: afirmativo
+    - intent: negativo
+  - action: action_ask_28
+  - intent: afirmativo
+  - action: action_ask_29
+  - action: response_29_form
+  - active_loop: response_29_form
+  - slot_was_set:
+    - requested_slot: response_29
+  - slot_was_set:
+    - response_29: estres
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_ask_30
+  - action: response_30_form
+  - active_loop: response_30_form
+  - slot_was_set:
+    - requested_slot: response_30
+  - slot_was_set:
+    - response_30: estres
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_ask_31
+  - action: response_31_form
+  - active_loop: response_31_form
+  - slot_was_set:
+    - requested_slot: response_31
+  - slot_was_set:
+    - response_31: estres
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_ask_32
+  - action: utter_ask_33
+  - action: response_33_form
+  - active_loop: response_33_form
+  - slot_was_set:
+    - requested_slot: response_33
+  - slot_was_set:
+    - response_33: estres
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_ask_34
+  - action: response_34_form
+  - active_loop: response_34_form
+  - slot_was_set:
+    - requested_slot: response_34
+  - slot_was_set:
+    - response_34: estres
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_ask_35
+  - intent: afirmativo
+  - action: utter_ask_36
+  - action: response_36_form
+  - active_loop: response_36_form
+  - slot_was_set:
+    - requested_slot: response_36
+  - slot_was_set:
+    - response_36: estres
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_ask_37
+  - intent: despedida
+  - action: utter_despedida
+
+ #formulario
+  #- action: utter_ask_13
+  #- intent: negativo 
+  #- action: utter_ask_14
+
+- story: diagnostico
+  steps:
+  - action: utter_ask_131

@@ -1,0 +1,20 @@
+node_modules/
+models/
+Dialogo/
+Documentacion/
+.rasa
+containers/
+# Virtual environments
+venv/
+vent/
+.venv/
+.DS_Store
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+# Environment variables
+.env
+.env.*
+!.env.example

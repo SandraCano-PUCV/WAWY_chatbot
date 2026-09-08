@@ -1,0 +1,676 @@
+version: '3.1'
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+
+intents:
+  - saludo
+  - positivo
+  - despedida
+  - negativo
+  - agradecer
+  - afirmativo
+
+entities: 
+- response
+- UserID
+
+slots:
+  UserID:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: UserID
+
+  nombre:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_text
+        conditions:
+         - active_loop: nombre_form
+           requested_slot: nombre
+  edad:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_text
+        conditions:
+         - active_loop: edad_form
+           requested_slot: edad
+  genero:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_text
+        conditions:
+         - active_loop: genero_form
+           requested_slot: genero
+  vivir:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_text
+        conditions:
+         - active_loop: vivir_form
+           requested_slot: vivir
+  conquien:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_text
+        conditions:
+         - active_loop: conquien_form
+           requested_slot: conquien
+  profesion:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_text
+        conditions:
+         - active_loop: profesion_form
+           requested_slot: profesion
+  universidad:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_text
+        conditions:
+         - active_loop: universidad_form
+           requested_slot: universidad
+  escuela:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_text
+        conditions:
+         - active_loop: escuela_form
+           requested_slot: escuela
+  semestre:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_text
+        conditions:
+         - active_loop: semestre_form
+           requested_slot: semestre
+  response:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: response
+  response_11:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_text
+        conditions:
+         - active_loop: response_11_form
+           requested_slot: response_11
+  response_12:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_text
+        conditions:
+         - active_loop: response_12_form
+           requested_slot: response_12
+  response_121:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_text
+        conditions:
+         - active_loop: response_121_form
+           requested_slot: response_121
+  response_13:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_text
+        conditions:
+         - active_loop: response_13_form
+           requested_slot: response_13
+  response_14:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_text
+        conditions:
+         - active_loop: response_14_form
+           requested_slot: response_14
+
+  response_15:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_text
+        conditions:
+         - active_loop: response_15_form
+           requested_slot: response_15
+  response_16:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_text
+        conditions:
+         - active_loop: response_16_form
+           requested_slot: response_16
+  response_17:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_text
+        conditions:
+         - active_loop: response_17_form
+           requested_slot: response_17 
+  response_18:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_text
+        conditions:
+         - active_loop: response_18_form
+           requested_slot: response_18 
+  response_20:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_text
+        conditions:
+         - active_loop: response_20_form
+           requested_slot: response_20   
+  response_21:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_text
+        conditions:
+         - active_loop: response_21_form
+           requested_slot: response_21   
+  response_22:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_text
+        conditions:
+         - active_loop: response_22_form
+           requested_slot: response_22 
+  response_23:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_text
+        conditions:
+         - active_loop: response_23_form
+           requested_slot: response_23
+  response_24:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_text
+        conditions:
+         - active_loop: response_24_form
+           requested_slot: response_24
+  response_29:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_text
+        conditions:
+         - active_loop: response_29_form
+           requested_slot: response_29
+  response_30:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_text
+        conditions:
+         - active_loop: response_30_form
+           requested_slot: response_30
+  response_31:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_text
+        conditions:
+         - active_loop: response_31_form
+           requested_slot: response_31
+  response_33:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_text
+        conditions:
+         - active_loop: response_33_form
+           requested_slot: response_33
+  response_34:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_text
+        conditions:
+         - active_loop: response_34_form
+           requested_slot: response_34
+  response_36:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_text
+        conditions:
+         - active_loop: response_36_form
+           requested_slot: response_36
+forms:  
+  nombre_form:
+    required_slots:
+      - nombre
+  edad_form:
+    required_slots:
+      - edad
+  genero_form:
+    required_slots:
+      - genero
+  vivir_form:
+    required_slots:
+      - vivir
+  conquien_form:
+    required_slots:
+      - conquien
+  profesion_form:
+    required_slots:
+      - profesion
+  universidad_form:
+    required_slots:
+      - universidad
+  escuela_form:
+    required_slots:
+      - escuela
+  semestre_form:
+    required_slots:
+      - semestre
+  response_11_form:
+    required_slots:
+      - response_11
+  response_12_form:
+    required_slots:
+      - response_12
+  response_121_form:
+    required_slots:
+     - response_121
+  response_13_form:
+    required_slots:
+      - response_13
+  response_14_form:
+    required_slots:
+      - response_14
+  response_15_form:
+    required_slots:
+      - response_15
+  response_16_form:
+    required_slots:
+      - response_16
+  response_17_form:
+    required_slots:
+      - response_17
+  response_18_form:
+    required_slots:
+      - response_18
+  response_20_form:
+    required_slots:
+      - response_20 
+  response_21_form:
+    required_slots:
+      - response_21 
+  response_22_form:
+    required_slots:
+      - response_22 
+  response_23_form:
+    required_slots:
+      - response_23 
+  response_24_form:
+    required_slots:
+      - response_24 
+  response_29_form:
+    required_slots:
+      - response_29
+  response_30_form:
+    required_slots:
+      - response_30
+  response_31_form:
+    required_slots:
+      - response_31
+  response_33_form:
+    required_slots:
+      - response_33
+  response_34_form:
+    required_slots:
+      - response_34
+  response_36_form:
+    required_slots:
+      - response_36
+responses:
+  utter_wawy:
+  - text: Hola soy Wawy, un asistente virtual diseñado para apoyarte emocionalmente.
+    image: assets/img/botAvatar.png
+  utter_ask_1: 
+  - text: Cómo te llamas?
+  utter_presentacion_1:
+  - buttons: 
+    - payload: igualmente
+      title: igualmente
+    - payload: igualmente
+      title: un gusto también para mi
+    - payload: igualmente
+      title: vacán conocerte
+    text: un gusto conocerte {nombre}. 
+  utter_ask_2:
+  - text: Entonces {nombre}....¿Qué edad tienes?
+  utter_response_edad:
+  - text: WOW estás en una edad estupenda! :)
+  utter_ask_3:
+  - buttons:
+    - payload: 'hombre'
+      title: 👨‍🦱 Hombre
+    - payload: 'mujer'
+      title: 👩 Mujer
+    - payload: 'LGBTIQ'
+      title: LGBTIQ
+    - payload: 'No binario'
+      title: No binario
+    - payload: 'Prefiero no especificar'
+      title: Prefiero no especificar
+    text: dime {nombre} con qué género te identificas?
+  utter_response_genero:
+  - text: muchas gracias por contarme {nombre}. La verdad yo no me identifico con ningún género, pero te quería preguntar a ti.
+  utter_ask_4:
+  - buttons:
+    - payload: 'si'
+      title: Claro que si
+    - payload: 'si'
+      title: Por supuesto
+    text: ¿{nombre} te gustaría contarme con quien vives?
+  utter_ask_5:
+  - buttons:
+    - payload: 'padres'
+      title: padres
+    - payload: 'solo'
+      title: solo
+    - payload: 'amigos'
+      title: amigos
+    - payload: Herman@(s)
+      title: Herman@(s)
+    - payload: Novi@
+      title: Novi@
+    text: ¿{nombre} con quien vives?
+  utter_ask_6:
+  - buttons:
+    - payload: 'ambos'
+      title: ambos
+    - payload: 'estudio'
+      title: estudio
+    - payload: 'trabajo'
+      title: trabajo
+    text: ¿Estudias o Trabajas?
+  utter_ask_7:
+  - buttons:
+    - payload: 'PUCV'
+      title: Pontificia Universidad Católica de Valparaíso
+    - payload: 'USB'
+      title: Universidad de San Buenaventura Cali
+    text: ¿En que universidad estás?
+  utter_ask_8:
+  - buttons:
+    - payload: 'Escuela de ingeniería Informática'
+      title: Escuela de ingeniería Informática
+    - payload: 'Facultad de psicología'
+      title: facultad de psicología
+    - payload: 'Facultad de ingeniería'
+      title: facultad de ingeniería
+    text: ¿En que escuela o facultad?
+  utter_ask_9:
+  - buttons:
+    - payload: "1"
+      title: primero
+    - payload: "2"
+      title: segundo
+    - payload: "3"
+      title: tercero
+    - payload: "4"
+      title: cuarto
+    - payload: "5"
+      title: quinto
+    - payload: "6"
+      title: sexto
+    - payload: "7"
+      title: septimo
+    - payload: "8"
+      title: octavo
+    - payload: "9"
+      title: noveno
+    - payload: "10"
+      title: decimo
+    - payload: "11"
+      title: once
+    - payload: "12"
+      title: doce
+    text: ¿En que semestre?
+  utter_response_9:
+  - buttons:
+    - payload: '/afirmativo'
+      title: vale, Wawy
+    - payload: '/afirmativo'
+      title: Que interesante
+    text: Felicitaciones, yo me dedico al bienestar emocional mental de los humanos.Ahora bien {nombre}, quiero hablarte de la forma en la que te voy a ayudar; soy un acompañante virtual el cual se enfoca en la terapia cognitivo conductual, si quieres saber más acerca de ella selecciona la opción ? y ahí podrás informarte
+  utter_ask_10:
+  - buttons:
+    - payload: '/afirmativo'
+      title: si, pero recuerdame
+    - payload: '/afirmativo'
+      title: no, cuentame
+    text: ¿{nombre}, sabes el significado del concepto de estrés académico?
+  utter_response_10:
+  - buttons:
+    - payload: '/afirmativo'
+      title: Oh entiendo
+    text: Entonces {nombre}, Segun C, Ferrera y  S, Bárcenas (2016) el estrés académico es un proceso sistémico, de carácter adaptativo y esencialmente psicológico, se evidencia  bajo la valoración del propio alumno considerado situaciones  estresoras; cuando estos estresores provocan un desequilibrio sistemático (situación estresante) que se manifiesta en una serie de síntomas (indicadores del desequilibrio); y cuando este desequilibrio obliga al alumno a realizar acciones de afrontamiento para restaurar el equilibrio sistémico
+  utter_ask_11:
+  - text: Quieres compartirme sobre lo que has sentido últimamente, en la universidad o con tus equipos de trabajo?
+  utter_response_11:
+  - buttons:
+    - payload: '/afirmativo'
+      title: Si
+    - payload: '/negativo'
+      title: No, ya escribí lo necesario.
+    text: Muchas gracias por tener la confianza de compartirme lo que está sucediendo en tu vida. Quieres contarme mas sobre ello? Estoy a toda tu disposición para leerte.
+  utter_ask_12:
+  - buttons:
+    - payload: '/afirmativo'
+      title: Vale Wawy
+    - payload: '/negativo'
+      title: No, muchas gracias Wawy.
+    text: Gracias por decirme {nombre}. Si hay algo más que quieras decir, por favor no te cohíbas, desahógate conmigo todo lo que necesites.
+  
+  utter_ask_121:
+  - text: Adelante, te leo
+
+  utter_response_12:
+  - buttons:
+    - payload: '/agradecer'
+      title: Muchas gracias
+    text: entonces {nombre}, quiero decirte que cuentas conmigo desde lo más profundo de mis redes y circuitos, no soy un humano así que no tengo la capacidad de sentir emociones, pero te puedo acompañar en este transcurrir de tiempo, en el que me encuentres útil para tu bienestar emocional.
+  utter_ask_13:
+  - buttons:
+    - payload: '/afirmativo'
+      title: Si
+    - payload: '/negativo'
+      title: No
+    - payload: '/negativo'
+      title: En otro momento
+    text: Bueno {nombre} ya que me has contado el motivo por el cual has acudido a mí ¿Te gustaría que profundicemos en ello?
+  utter_ask_131:
+  - text: bien {nombre} cuentame
+  utter_ask_14:
+  - buttons:
+    - payload: 'intranquilidad'
+      title: Intranquilidad
+    - payload: 'inquietud'
+      title: Inquietud
+    - payload: 'insomnio'
+      title: Insomnio
+    - payload: 'frustraccion'
+      title: Frustraccion
+    text: Entiendo cómo te sientes y lo que me cuentas, podrías decirme si esto que estás sintiendo este de pronto relacionado con algunas de estas opciones
+  utter_ask_16:
+  - buttons:
+    - payload: Temas relacionados con la universidad sobrecarga académica, comprensión de temas y demás
+      title: Temas relacionados con la universidad, sobrecarga académica, comprensión de temas y demás
+    - payload: Asuntos familiares
+      title: Asuntos familiares
+    - payload: Problemas con amigos o pareja sentimental
+      title: Problemas con amigos o pareja sentimental
+    text: bien {nombre}, podrias especificar por favor qué situaciones te generan aquello que indicaste anteriormente en la imagen
+   
+  utter_ask_17:
+  - buttons:
+    - payload: Te desentiendes del problema y piensas en otra cosa
+      title: Te desentiendes del problema y piensas en otra cosa
+    - payload: Das importancia al problema, pero así mismo buscas soluciones.
+      title: Das importancia al problema, pero así mismo buscas soluciones
+    text: ¿Quieres contarme de qué forma asumes situaciones difíciles que se te presenten?
+
+  utter_ask_18:
+  - buttons: 
+    - payload: muy frecuentemente
+      title: muy frecuente
+    - payload: frecuentemente
+      title: frecuentemente
+    - payload: moderadamente
+      title: moderadamente
+    - payload: poco frecuente
+      title: poco frecuente
+    - payload: nunca
+      title: nunca
+    text: Te comprendo {nombre}. Por otra parte, quisiera preguntarte si también presentan inquietud e incapacidad de relajarse y estar en calma en situaciones ante demasiada presión, ejemplo
+          Juan se está preparando para las entregas finales de la carrera, pero no ha podido conciliar el sueño, y su alimentación ha estado descontrolada, dado que algunos días pierde el apetito y otros come desaforadamente, sus amigos le dicen que se lo tome con calma y es ahí donde Juan explota, como una bomba tiempo y comienza a tratar groseramente a sus compañeros. ¿Te identificas con Juan?
+  utter_ask_20:
+  - buttons: 
+    - payload: Presión en el pecho
+      title: Presión en el pecho
+    - payload: Sensación de ahogo
+      title: Sensación de ahogo
+    - payload: Todas las anteriores
+      title: todas las anteriores 
+    text: Entonces {nombre}, referente al video identificaste si has vivenciado algunas de estas opciones
+  utter_ask_22:
+  - buttons: 
+    - payload: sí, lo he notado
+      title: sí, lo he notado
+    - payload: no lo había pensado de esa manera
+      title: no lo había pensado de esa manera
+    text: Bueno {nombre} quiero preguntarte si has notado si has notado que de acuerdo a la forma como pensamos frente a las situaciones que enfrentamos cambia nuestra forma de sentirnos al respecto?
+  utter_ask_25:
+  - buttons:
+    - payload: "/afirmativo"
+      title: Entiendo WAWY
+    text: muchas gracias {nombre} por compartir esta experiencia conmigo es muy valioso para mí todo lo que me estás contando, por ende es necesario comenzar a plantearnos una identificación de estos pensamientos intrusivos y evaluar si nos están haciendo bien o mal en nuestro bienestar mental.
+  utter_ask_27:
+  - buttons:
+    - payload: "/afirmativo"
+      title: si
+    - payload: "/negativo"
+      title: no lo he identificado aún.
+    text: ¿te has sentido identificado con los ejemplos?  
+  utter_ask_30:
+  - text: ¿por qué escogiste ese emoji?
+  utter_ask_33:
+  - buttons: 
+    - payload: muy frecuentemente
+      title: muy frecuente
+    - payload: frecuentemente
+      title: frecuentemente
+    - payload: pocas veces
+      title: pocas veces
+    - payload: casi nunca
+      title: casi nunca
+    text: ¿Has vivido alguna vez estos pensamientos de minimización de las cosas positivas?
+  utter_ask_34:
+  - buttons: 
+    - payload: muy frecuentemente
+      title: muy frecuente
+    - payload: frecuentemente
+      title: frecuentemente
+    - payload: pocas veces
+      title: pocas veces
+    - payload: casi nunca
+      title: casi nunca
+    text: ¿ sueles concentrarte en tus puntos débiles olvidando los fuertes?
+  utter_ask_35:
+  - buttons:
+    - payload: ok
+      title: entiendo
+    text: Entiendo que en algún momento estos pensamientos hayan atravesado por tu mente, sin embargo, no te preocupes he identificado que los humanos experimentan esto de minimizar lo positivo que nos puede pasar, lo ideal sería que se pudieran valorar los pequeños logros o los momentos buenos que vivimos y no convertirlos en pensamientos victimizadores o no merecedores de reconocimientos.
+
+  utter_ask_36:
+  - buttons: 
+    - payload: muy frecuentemente
+      title: muy frecuente
+    - payload: frecuentemente
+      title: frecuentemente
+    - payload: pocas veces
+      title: pocas veces
+    - payload: casi nunca
+      title: casi nunca
+    text: Es importante cuestionarse en este momento si ¿Estás utilizando un criterio distinto para ti que para los demás? cuando hay una situación donde se premie un logro o un reconocimiento.
+  utter_ask_37: 
+  - buttons:
+    - payload: "/despedida"
+      title: muchas gracias,WAWY
+    text: entonces {nombre}, respecto a lo que has contestado es vital concientizar que estos pensamientos intrusivos de minimizar lo positivo puede afectar a nivel personal como a la parte social, por ende te invito a identificar tus logros, tus virtudes y reconocerlas, aceptarlas y asumirlas, ante cualquier situación. así cuando surjan de nuevo este tipo pensamientos los confrontes. Así que hasta aquí llegamos hoy, me encanto conocerte.
+  utter_despedida:
+  - text: que tengas un excelente resto del día.
+  utter_respuesta: 
+  - text: gracias por responder. 
+actions:
+- validate_nombre_form
+- validate_edad_form
+- action_saludo
+- validate_genero_form
+- validate_vivir_form
+- validate_conquien_form
+- validate_profesion_form
+- validate_universidad_form
+- validate_escuela_form
+- validate_semestre_form
+- validate_response_11_form
+- validate_response_12_form
+- validate_response_121_form
+- validate_response_13_form
+- validate_response_14_form
+- action_ask_15
+- validate_response_15_form
+- validate_response_16_form
+- validate_response_17_form
+- validate_response_18_form
+- action_ask_19
+- validate_response_20_form
+- action_ask_21
+- validate_response_21_form
+- validate_response_22_form
+- action_ask_23
+- validate_response_23_form
+- action_ask_24
+- validate_response_24_form
+- action_ask_26
+- action_ask_28
+- action_ask_29
+- validate_response_29_form
+- validate_response_30_form
+- action_ask_31
+- validate_response_31_form
+- action_ask_32
+- validate_response_33_form
+- validate_response_34_form
+- validate_response_36_form
